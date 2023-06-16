@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import "./assets/styles/index.css";
 import store from './store';
-import App from './App';
+import App from './app';
 import messages_en from './locales/en.json';
 
 const messages = {
