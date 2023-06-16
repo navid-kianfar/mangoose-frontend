@@ -1,22 +1,20 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../actions/loginActions';
-import {RootState} from "../types/states";
 
 // Form Input Component
-const Input: React.FC<{label: string, value: string, type: string, onChange: (value: string) => void}> = ({ label, value, type, onChange }) => (
+const Input = ({ label, value, type, onChange }) => (
     <div className="input-field">
         <label>{label}</label>
         <input type={type} value={value} onChange={(e) => onChange(e.target.value)} />
     </div>
 );
 
-// Form Component
-const LoginForm: React.FC<{onSubmit: (username: string, password: string) => void}> = ({ onSubmit }) => {
+const LoginForm = ({ onSubmit }) => {
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         onSubmit(username, password);
     };
@@ -31,11 +29,11 @@ const LoginForm: React.FC<{onSubmit: (username: string, password: string) => voi
 };
 
 // Login Page Component
-const LoginPage: React.FC = () => {
+const LoginPage = () => {
     const dispatch = useDispatch();
-    const loginError = useSelector((state: RootState) => state.login.error);
+    const loginError = useSelector((state) => state.login.error);
 
-    const handleLogin = (username: string, password: string) => {
+    const handleLogin = (username, password) => {
         dispatch(loginUser({ username, password }));
     };
 

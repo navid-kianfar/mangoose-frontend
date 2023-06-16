@@ -1,13 +1,12 @@
-import {LoginState} from "../types/states";
 import {LOGIN_ERROR, LOGIN_SUCCESS} from "../constants/actions";
 
-const initialState: LoginState = {
+const initialState = {
     loggedIn: false,
     user: {},
     error: null,
 };
 
-function loginReducer(state = initialState, action: any) {
+function loginReducer(state = initialState, action) {
     switch (action.type) {
         case LOGIN_SUCCESS:
             return {

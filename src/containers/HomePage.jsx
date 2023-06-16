@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-function App() {
+const HomePage = () => {
     return (
         <div>
             <button><FormattedMessage id="app.login" /></button>
@@ -9,4 +9,4 @@ function App() {
     );
 }
 
-export default App;
+export default HomePage;
