@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import "./assets/styles/App.css";
+import "./assets/styles/app.css";
 import LoginPage from './containers/login-page';
 import HomePage from './containers/home-page';
 import ScrollToTop from "./components/core/scroll-to-top";
