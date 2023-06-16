@@ -1,0 +1,14 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+.full-screen {
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: hidden;
+}

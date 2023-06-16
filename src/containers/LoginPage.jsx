@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from '../actions/loginActions';
+import { loginUser } from '../actions/login-actions';
 
 // Form Input Component
 const Input = ({ label, value, type, onChange }) => (
