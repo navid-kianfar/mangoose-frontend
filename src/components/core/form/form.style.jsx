@@ -19,7 +19,7 @@ const Wrapper = styled.div`
       border: 1px solid var(--app-primary-color);
       outline: none;
       border-radius: 5px;
-      padding: 10px;
+      padding: 16px;
       color: var(--app-fg-color);
     }
 

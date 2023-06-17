@@ -22,7 +22,7 @@ const form = createFormElement([
     ],
   },
   {
-    size: 2,
+    size: 5,
     elements: [
       createTextElement({
         config: {
@@ -37,7 +37,7 @@ const form = createFormElement([
     ],
   },
   {
-    size: 8,
+    size: 5,
     elements: [
       createTextElement({
         config: {
