@@ -8,6 +8,10 @@
     --app-action-bg-color: #344e5c;
     --app-action-fg-color: #f3f4f5;
     --app-action-border-color: #50819a;
+
+    --app-action-success-bg-color: #37593e;
+    --app-action-success-fg-color: #fafafa;
+    --app-action-success-border-color: #579761;
 }
 
 body {
@@ -76,6 +80,11 @@ body {
     border-color: var(--app-action-border-color);
     background-color: var(--app-action-bg-color);
     color: var(--app-action-fg-color);
+}
+.app-dialog .footer .actions button.success {
+    border-color: var(--app-action-success-border-color);
+    background-color: var(--app-action-success-bg-color);
+    color: var(--app-action-success-fg-color);
 }
 
 .app-dialog .footer .actions button.primary:hover {

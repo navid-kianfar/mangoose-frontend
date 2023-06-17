@@ -13,24 +13,24 @@ class LoginPage extends React.Component {
         remember: false,
       },
       advanced: {
-        name: '',
-        icon: '',
-        color: '',
-        uri: '',
+        name: "",
+        icon: "",
+        color: "",
+        uri: "",
         ssh: {
-          host: '',
+          host: "",
           port: 22,
-          username: '',
-          password: '',
-          authType: 'password'
+          username: "",
+          password: "",
+          authType: "password",
         },
         tls: {
-          keyFile: '',
-          password: '',
-          authorityFile: '',
+          keyFile: "",
+          password: "",
+          authorityFile: "",
           allowInvalidCertificate: false,
-          allowInvalidHostName: false
-        }
+          allowInvalidHostName: false,
+        },
       },
       disabled: false,
       waiting: false,
@@ -52,14 +52,14 @@ class LoginPage extends React.Component {
   updateLoginModel(login) {
     this.setState({
       ...this.state,
-      login
+      login,
     });
     console.log(login);
   }
   updateConnectionModel(advanced) {
     this.setState({
       ...this.state,
-      advanced
+      advanced,
     });
     console.log(advanced);
   }

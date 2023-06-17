@@ -8,5 +8,7 @@
   "app.password.enter": "Please enter your password",
   "app.advanced.connection.setup": "Advanced connection setup",
   "app.provide.credentials": "Please provide your credentials",
-  "app.remember.me": "Remember me"
+  "app.remember.me": "Remember me",
+  "app.test.connection": "Test Connection",
+  "app.save.changes": "Save Changes"
 }
