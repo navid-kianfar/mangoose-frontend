@@ -15,8 +15,6 @@ const FormComponent = ({ form, disabled, wating, onModelChange }) => {
       onModelChange(patch);
   };
 
-  console.log(form);
-
   return (
       <Wrapper className="form-element-wrapper">
         { form.elements.map(e => (

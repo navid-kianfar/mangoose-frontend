@@ -59,10 +59,17 @@ class LoginPage extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      username: '',
+      password: '',
+      remember: false,
+    };
   }
 
-  updateModel(model) {}
+  updateModel(model) {
+    this.setState(model);
+    console.log(model);
+  }
 
   render() {
     return (
