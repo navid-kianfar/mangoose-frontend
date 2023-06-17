@@ -1,6 +1,7 @@
 import React from "react";
 import Wrapper from "./connection-setup.style";
 import { FormattedMessage } from "react-intl";
+import ColorPickerComponent from "../../core/color-picker/color-picker.component";
 
 class ConnectionSetupComponent extends React.Component {
   constructor(props) {
@@ -34,12 +35,27 @@ class ConnectionSetupComponent extends React.Component {
       <Wrapper className="connection-setup-wrapper">
         <div className="app-dialog">
           <div className="header">
+            {/*<button>*/}
+            {/*  <i className="ti ti-chevron-left"></i>*/}
+            {/*  <span>Back</span>*/}
+            {/*</button>*/}
             <h3>
               <FormattedMessage id="app.advanced.connection.setup" />
             </h3>
+            <button>
+              <i className="ti ti-x"></i>
+            </button>
           </div>
-          <div className="content"></div>
+          <div className="content">
+
+
+
+          </div>
           <div className="footer">
+            {/*<button>*/}
+            {/*  <i className="ti ti-chevron-left"></i>*/}
+            {/*  <span>Back</span>*/}
+            {/*</button>*/}
             <div className="actions">
               <button
                 className="primary"

@@ -40,6 +40,9 @@ body {
     min-width: 600px;
 }
 .app-dialog .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 20px 30px;
     border-bottom: 2px solid var(--app-border-color);
     background: var(--app-secondary-bg-color);
@@ -48,10 +51,30 @@ body {
     margin: 0;
 }
 .app-dialog .footer{
+    display: flex;
+    align-items: center;
+    justify-content: end;
     padding: 20px 30px;
     border-top: 2px solid var(--app-border-color);
     background: var(--app-secondary-bg-color);
 }
+
+.app-dialog .header > button,
+.app-dialog .footer > button {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--app-fg-color);
+}
+
+.app-dialog .header > button i ,
+.app-dialog .footer > button i {
+    margin-inline-end: 10px;
+}
+
 .app-dialog .footer .actions {
     display: flex;
     flex-direction: row-reverse;
