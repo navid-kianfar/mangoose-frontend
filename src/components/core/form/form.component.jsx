@@ -1,4 +1,4 @@
-import { Checkbox, FormControlLabel, Input, TextField } from "@mui/material";
+import { Checkbox, FormControlLabel } from "@mui/material";
 import Wrapper from "./form.style";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useState } from "react";
@@ -29,6 +29,7 @@ const FormComponent = ({ form, disabled, wating, onModelChange }) => {
           {e.element === "text" && (
             <input
               type={e.params.password ? "password" : "text"}
+              autoComplete="off"
               value={state[e.config.field]}
               onChange={(ev) => updateField(e.config.field, ev.target.value)}
               disabled={disabled || wating}
