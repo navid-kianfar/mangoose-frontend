@@ -22,6 +22,10 @@ const Wrapper = styled.div`
       padding: 10px;
       color: var(--app-fg-color);
     }
+
+    .icon-preview {
+      font-size: 40px;
+    }
   }
 `;
 

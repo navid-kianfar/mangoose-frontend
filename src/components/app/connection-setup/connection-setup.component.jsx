@@ -1,7 +1,70 @@
 import React from "react";
 import Wrapper from "./connection-setup.style";
 import { FormattedMessage } from "react-intl";
-import ColorPickerComponent from "../../core/color-picker/color-picker.component";
+import {
+  createColorPickerElement,
+  createFormElement,
+  createIconPreviewElement,
+  createTextElement,
+} from "../../../utils/form-helper";
+import FormComponent from "../../core/form/form.component";
+
+const form = createFormElement([
+  {
+    size: 1,
+    elements: [
+      createColorPickerElement({
+        config: {
+          field: "",
+          label: "app.color",
+        },
+      }),
+    ],
+  },
+  {
+    size: 2,
+    elements: [
+      createTextElement({
+        config: {
+          field: "",
+          label: "app.connection.name",
+        },
+        params: {
+          model: "",
+          placeholder: "app.new.connection",
+        },
+      }),
+    ],
+  },
+  {
+    size: 8,
+    elements: [
+      createTextElement({
+        config: {
+          field: "",
+          label: "app.favicon",
+        },
+        params: {
+          model: "",
+          placeholder: "app.favicon.placeholder",
+        },
+      }),
+    ],
+  },
+  {
+    size: 1,
+    elements: [
+      createIconPreviewElement({
+        config: {
+          label: "app.preview",
+        },
+        params: {
+          model: "ti ti-settings",
+        },
+      }),
+    ],
+  },
+]);
 
 class ConnectionSetupComponent extends React.Component {
   constructor(props) {
@@ -47,9 +110,12 @@ class ConnectionSetupComponent extends React.Component {
             </button>
           </div>
           <div className="content">
-
-
-
+            <FormComponent
+              form={form}
+              disabled={false}
+              waiting={false}
+              onModelChange={() => {}}
+            />
           </div>
           <div className="footer">
             {/*<button>*/}

@@ -28,6 +28,21 @@ const checkBoxConfig = {
     label: "",
   },
 };
+const colorPickerConfig = {
+  ...defaultConfig,
+  params: {
+    model: "",
+  },
+};
+const iconPreviewConfig = {
+  ...defaultConfig,
+  config: {
+    label: "",
+  },
+  params: {
+    model: "",
+  },
+};
 
 const createTextElement = (config = textConfig) => {
   return {
@@ -36,7 +51,6 @@ const createTextElement = (config = textConfig) => {
     element: "text",
   };
 };
-
 const createCheckBoxElement = (config = checkBoxConfig) => {
   return {
     ...checkBoxConfig,
@@ -44,20 +58,42 @@ const createCheckBoxElement = (config = checkBoxConfig) => {
     element: "checkbox",
   };
 };
-
-const createFormElement = (elements = []) => {
+const createColorPickerElement = (config = colorPickerConfig) => {
+  return {
+    ...colorPickerConfig,
+    ...config,
+    element: "color-picker",
+  };
+};
+const createIconPreviewElement = (config = iconPreviewConfig) => {
+  return {
+    ...iconPreviewConfig,
+    ...config,
+    element: "icon-preview",
+  };
+};
+const createFormElement = (formDef = []) => {
   const form = {
     id: Guid(),
-    elements,
     model: {},
+    def: formDef,
   };
 
-  elements.forEach((e) => {
-    e.key = Guid();
-    form.model[e.config.field] = e.params?.model;
+  formDef.forEach((frm) => {
+    frm.key = Guid();
+    frm.elements.forEach((e) => {
+      e.key = Guid();
+      form.model[e.config.field] = e.params?.model;
+    });
   });
 
   return form;
 };
 
-export { createTextElement, createCheckBoxElement, createFormElement };
+export {
+  createTextElement,
+  createCheckBoxElement,
+  createFormElement,
+  createColorPickerElement,
+  createIconPreviewElement,
+};

@@ -8,6 +8,6 @@ const Wrapper = styled.div`
     background: #3faf5a;
     border-radius: 10px;
   }
-`
+`;
 
 export default Wrapper;

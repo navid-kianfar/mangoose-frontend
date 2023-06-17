@@ -10,5 +10,11 @@
   "app.provide.credentials": "Please provide your credentials",
   "app.remember.me": "Remember me",
   "app.test.connection": "Test connection",
-  "app.save.changes": "Save changes"
+  "app.save.changes": "Save changes",
+  "app.connection.name": "Connection name",
+  "app.new.connection": "New connection",
+  "app.favicon": "Favicon",
+  "app.favicon.placeholder": "URL of Tabler icon (e.g: 'ti ti-settings')",
+  "app.color": "Color",
+  "app.preview": "Preview"
 }

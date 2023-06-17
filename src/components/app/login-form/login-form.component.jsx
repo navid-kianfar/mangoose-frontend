@@ -8,49 +8,54 @@ import {
 } from "../../../utils/form-helper";
 
 const form = createFormElement([
-  createTextElement({
-    config: {
-      field: "username",
-      label: "app.username",
-    },
-    params: {
-      placeholder: "app.username.enter",
-      model: "",
-    },
-    validation: {
-      required: {
-        value: true,
-        message: "app.username.required",
-      },
-    },
-  }),
-  createTextElement({
-    config: {
-      field: "password",
-      label: "app.password",
-    },
-    params: {
-      password: true,
-      placeholder: "app.password.enter",
-      model: "",
-    },
-    validation: {
-      required: {
-        value: true,
-        message: "app.password.required",
-      },
-    },
-  }),
-  createCheckBoxElement({
-    config: {
-      field: "remember",
-      label: "",
-    },
-    params: {
-      model: false,
-      label: "app.remember.me",
-    },
-  }),
+  {
+    size: 12,
+    elements: [
+      createTextElement({
+        config: {
+          field: "username",
+          label: "app.username",
+        },
+        params: {
+          placeholder: "app.username.enter",
+          model: "",
+        },
+        validation: {
+          required: {
+            value: true,
+            message: "app.username.required",
+          },
+        },
+      }),
+      createTextElement({
+        config: {
+          field: "password",
+          label: "app.password",
+        },
+        params: {
+          password: true,
+          placeholder: "app.password.enter",
+          model: "",
+        },
+        validation: {
+          required: {
+            value: true,
+            message: "app.password.required",
+          },
+        },
+      }),
+      createCheckBoxElement({
+        config: {
+          field: "remember",
+          label: "",
+        },
+        params: {
+          model: false,
+          label: "app.remember.me",
+        },
+      }),
+    ],
+  },
 ]);
 
 const LoginFormComponent = ({
