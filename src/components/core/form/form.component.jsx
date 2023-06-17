@@ -3,7 +3,7 @@ import Wrapper from "./form.style";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useState } from "react";
 
-const FormComponent = ({ form, disabled, wating, onModelChange }) => {
+const FormComponent = ({ form, disabled, waiting, onModelChange }) => {
   const [state, setState] = useState(form.model);
   const intl = useIntl();
 
@@ -32,7 +32,7 @@ const FormComponent = ({ form, disabled, wating, onModelChange }) => {
               autoComplete="off"
               value={state[e.config.field]}
               onChange={(ev) => updateField(e.config.field, ev.target.value)}
-              disabled={disabled || wating}
+              disabled={disabled || waiting}
               placeholder={intl.formatMessage({ id: e.params.placeholder })}
             />
           )}
@@ -46,7 +46,7 @@ const FormComponent = ({ form, disabled, wating, onModelChange }) => {
                   onChange={(ev) =>
                     updateField(e.config.field, ev.target.value)
                   }
-                  disabled={disabled || wating}
+                  disabled={disabled || waiting}
                 />
               }
             />

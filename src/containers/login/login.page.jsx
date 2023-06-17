@@ -1,155 +1,92 @@
 import React from "react";
-import { FormattedMessage } from "react-intl";
-// import { useDispatch, useSelector } from "react-redux";
-// import { loginUser } from "../actions/login-actions";
 import Wrapper from "./login.style";
-import FormComponent from "../../components/core/form/form.component";
-import {
-  createCheckBoxElement,
-  createFormElement,
-  createTextElement,
-} from "../../utils/form-helper";
+import ConnectionSetupComponent from "../../components/app/connection-setup/connection-setup.component";
+import LoginFormComponent from "../../components/app/login-form/login-form.component";
 
 class LoginPage extends React.Component {
-  form = createFormElement([
-    createTextElement({
-      config: {
-        field: "username",
-        label: "app.username",
-      },
-      params: {
-        placeholder: "app.username.enter",
-        model: "",
-      },
-      validation: {
-        required: {
-          value: true,
-          message: "app.username.required",
-        },
-      },
-    }),
-    createTextElement({
-      config: {
-        field: "password",
-        label: "app.password",
-      },
-      params: {
-        password: true,
-        placeholder: "app.password.enter",
-        model: "",
-      },
-      validation: {
-        required: {
-          value: true,
-          message: "app.password.required",
-        },
-      },
-    }),
-    createCheckBoxElement({
-      config: {
-        field: "remember",
-        label: "",
-      },
-      params: {
-        model: false,
-        label: "app.remember.me",
-      },
-    }),
-  ]);
-
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      password: "",
-      remember: false,
+      login: {
+        username: "",
+        password: "",
+        remember: false,
+      },
+      advanced: {
+        name: '',
+        icon: '',
+        color: '',
+        uri: '',
+        ssh: {
+          host: '',
+          port: 22,
+          username: '',
+          password: '',
+          authType: 'password'
+        },
+        tls: {
+          keyFile: '',
+          password: '',
+          authorityFile: '',
+          allowInvalidCertificate: false,
+          allowInvalidHostName: false
+        }
+      },
+      disabled: false,
       waiting: false,
+      credentials: false,
     };
   }
 
-  doLogin() {}
-
-  updateModel(model) {
+  doLogin() {
+    // dispatch(loginUser({ username, password }));
+  }
+  doConnect() {}
+  advancedConnection(credentials) {
     this.setState({
       ...this.state,
-      ...model,
+      credentials,
     });
-    console.log(model);
+  }
+
+  updateLoginModel(login) {
+    this.setState({
+      ...this.state,
+      login
+    });
+    console.log(login);
+  }
+  updateConnectionModel(advanced) {
+    this.setState({
+      ...this.state,
+      advanced
+    });
+    console.log(advanced);
   }
 
   render() {
     return (
       <Wrapper className="login-page-wrapper full-screen centered-box">
-        <div className="app-dialog">
-          <div className="header">
-            <h3>
-              <FormattedMessage id="app.provide.credentials" />
-            </h3>
-          </div>
-          <div className="content">
-            <FormComponent
-              form={this.form}
-              enabled={this.state.enabled}
-              wating={this.state.wating}
-              onModelChange={(model) => this.updateModel(model)}
-            />
-          </div>
-          <div className="footer">
-            <div className="actions">
-              <button onClick={this.doLogin} className="primary">
-                {this.state.waiting && <i className="spinner ti ti-loader"></i>}
-                <FormattedMessage id="app.login" />
-              </button>
-              <button>
-                <FormattedMessage id="app.advanced.connection.setup" />
-              </button>
-            </div>
-          </div>
-        </div>
+        {!this.state.credentials ? (
+          <ConnectionSetupComponent
+            onConnect={() => this.doConnect()}
+            onCancel={() => this.advancedConnection(true)}
+            onModelChange={(model) => this.updateConnectionModel(model)}
+            waiting={this.state.waiting}
+            disabled={this.state.disabled}
+          />
+        ) : (
+          <LoginFormComponent
+            onLogin={() => this.doLogin()}
+            onAdvancedConnection={() => this.advancedConnection(false)}
+            onModelChange={(model) => this.updateLoginModel(model)}
+            waiting={this.state.waiting}
+            disabled={this.state.disabled}
+          />
+        )}
       </Wrapper>
     );
   }
 }
-
-// const Input = ({ label, value, type, onChange }) => (
-//     <div className="input-field">
-//         <label>{label}</label>
-//         <input type={type} value={value} onChange={(e) => onChange(e.target.value)} />
-//     </div>
-// );
-//
-// const LoginForm = ({ onSubmit }) => {
-//     const [username, setUsername] = React.useState('');
-//     const [password, setPassword] = React.useState('');
-//
-//     const handleSubmit = (e) => {
-//         e.preventDefault();
-//         onSubmit(username, password);
-//     };
-//
-//     return (
-//         <form onSubmit={handleSubmit}>
-//             <Input label="Username:" value={username} type="text" onChange={setUsername} />
-//             <Input label="Password:" value={password} type="password" onChange={setPassword} />
-//             <button type="submit">Login</button>
-//         </form>
-//     );
-// };
-//
-// const LoginPage2 = () => {
-//     const dispatch = useDispatch();
-//     const loginError = useSelector((state) => state.login.error);
-//
-//     const handleLogin = (username, password) => {
-//         dispatch(loginUser({ username, password }));
-//     };
-//
-//     return (
-//         <div>
-//             <LoginForm onSubmit={handleLogin} />
-//             {loginError && <p>{loginError}</p>}
-//         </div>
-//     );
-// };
 
 export default LoginPage;
