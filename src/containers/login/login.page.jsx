@@ -19,6 +19,7 @@ class LoginPage extends React.Component {
       },
       params: {
         placeholder: "app.username.enter",
+        model: ''
       },
       validation: {
         required: {
@@ -35,6 +36,7 @@ class LoginPage extends React.Component {
       params: {
         password: true,
         placeholder: "app.password.enter",
+        model: ''
       },
       validation: {
         required: {

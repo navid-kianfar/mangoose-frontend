@@ -53,6 +53,7 @@ const createFormElement = (elements = []) => {
   };
 
   elements.forEach((e) => {
+    e.key = Guid();
     form.model[e.config.field] = e.params?.model;
   });
 
