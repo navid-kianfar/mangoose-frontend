@@ -1,0 +1,77 @@
+:root {
+    --app-bg-color: #101214;
+    --app-fg-color: #cccccc;
+    --app-border-color: #2b3136;
+    --app-secondary-bg-color: #16181b;
+    --app-primary-color: #009af0;
+
+    --app-action-bg-color: #344e5c;
+    --app-action-fg-color: #f3f4f5;
+    --app-action-border-color: #50819a;
+}
+
+body {
+    background: var(--app-bg-color);
+    color: var(--app-fg-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+.full-screen {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.centered-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-dialog {
+    border: 2px solid var(--app-border-color);
+    border-radius: 5px;
+    min-width: 600px;
+}
+.app-dialog .header{
+    padding: 20px 30px;
+    border-bottom: 2px solid var(--app-border-color);
+    background: var(--app-secondary-bg-color);
+}
+.app-dialog .header h3{
+    margin: 0;
+}
+.app-dialog .footer{
+    padding: 20px 30px;
+    border-top: 2px solid var(--app-border-color);
+    background: var(--app-secondary-bg-color);
+}
+.app-dialog .footer .actions {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.app-dialog .footer .actions button {
+    background: transparent;
+    padding: 10px 20px;
+    margin-inline-start: 10px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    color: var(--app-fg-color);
+    cursor: pointer;
+}
+.app-dialog .footer .actions button:hover {
+
+}
+
+.app-dialog .footer .actions button.primary {
+    border-color: var(--app-action-border-color);
+    background-color: var(--app-action-bg-color);
+    color: var(--app-action-fg-color);
+}
+
+.app-dialog .footer .actions button.primary:hover {
+
+}

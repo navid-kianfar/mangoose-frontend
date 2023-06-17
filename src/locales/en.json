@@ -1,3 +1,12 @@
 {
-  "app.login": "Login"
+  "app.login": "Login",
+  "app.username": "Username",
+  "app.password": "Password",
+  "app.username.required": "Username is required",
+  "app.password.required": "Password is required",
+  "app.username.enter": "Please enter your username",
+  "app.password.enter": "Please enter your password",
+  "app.advanced.connection.setup": "Advanced connection setup",
+  "app.provide.credentials": "Please provide your credentials",
+  "app.remember.me": "Remember me"
 }

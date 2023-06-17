@@ -9,13 +9,7 @@ class HomePage extends React.Component {
   }
 
   render() {
-    return (
-      <Wrapper className="home-page-wrapper">
-        <button>
-          <FormattedMessage id="app.login" />
-        </button>
-      </Wrapper>
-    );
+    return <Wrapper className="home-page-wrapper full-screen"></Wrapper>;
   }
 }
 

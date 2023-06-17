@@ -1,17 +1,97 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../actions/login-actions";
 import { FormattedMessage } from "react-intl";
+// import { useDispatch, useSelector } from "react-redux";
+// import { loginUser } from "../actions/login-actions";
 import Wrapper from "./login.style";
+import FormComponent from "../../components/core/form/form.component";
+import {
+  createCheckBoxElement,
+  createFormElement,
+  createTextElement,
+} from "../../utils/form-helper";
 
 class LoginPage extends React.Component {
+  form = createFormElement([
+    createTextElement({
+      config: {
+        field: "username",
+        label: "app.username",
+      },
+      params: {
+        placeholder: "app.username.enter",
+      },
+      validation: {
+        required: {
+          value: true,
+          message: "app.username.required",
+        },
+      },
+    }),
+    createTextElement({
+      config: {
+        field: "password",
+        label: "app.password",
+      },
+      params: {
+        password: true,
+        placeholder: "app.password.enter",
+      },
+      validation: {
+        required: {
+          value: true,
+          message: "app.password.required",
+        },
+      },
+    }),
+    createCheckBoxElement({
+      config: {
+        field: "remember",
+        label: "",
+      },
+      params: {
+        model: false,
+        label: "app.remember.me",
+      },
+    }),
+  ]);
+
   constructor(props) {
     super(props);
     this.state = {};
   }
 
+  updateModel(model) {}
+
   render() {
-    return <Wrapper className="login-page-wrapper"></Wrapper>;
+    return (
+      <Wrapper className="login-page-wrapper full-screen centered-box">
+        <div className="app-dialog">
+          <div className="header">
+            <h3>
+              <FormattedMessage id="app.provide.credentials" />
+            </h3>
+          </div>
+          <div className="content">
+            <FormComponent
+              form={this.form}
+              enabled={this.state.enabled}
+              wating={this.state.wating}
+              onModelChange={(model) => this.updateModel(model)}
+            />
+          </div>
+          <div className="footer">
+            <div className="actions">
+              <button className="primary">
+                <FormattedMessage id="app.login" />
+              </button>
+              <button>
+                <FormattedMessage id="app.advanced.connection.setup" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </Wrapper>
+    );
   }
 }
 
