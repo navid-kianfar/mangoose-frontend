@@ -2,19 +2,19 @@ import moment from "moment";
 import tz from "moment-timezone";
 
 const dateDiff = (endDate, startDate) => {
-    return moment(endDate).diff(startDate, "days");
-}
+  return moment(endDate).diff(startDate, "days");
+};
 
-const formatDate = (input, format = 'MMMM D, YYYY') => {
-    return moment(input).format(format);
-}
+const formatDate = (input, format = "MMMM D, YYYY") => {
+  return moment(input).format(format);
+};
 
 const parseTime = (input) => {
-    return moment(input).format('HH:mm');
+  return moment(input).format("HH:mm");
 };
 
 const parseAsMoment = (input) => {
-    return moment(input);
-}
+  return moment(input);
+};
 
-export { dateDiff, formatDate, parseTime, parseAsMoment }
+export { dateDiff, formatDate, parseTime, parseAsMoment };

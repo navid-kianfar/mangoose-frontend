@@ -1,27 +1,25 @@
-import React from 'react';
+import React from "react";
 import ReactDOM from "react-dom/client";
-import { Provider } from 'react-redux';
-import { IntlProvider } from 'react-intl';
+import { Provider } from "react-redux";
+import { IntlProvider } from "react-intl";
 import "normalize.css";
 import "./assets/styles/index.css";
-import store from './store';
-import App from './app';
-import messages_en from './locales/en.json';
+import store from "./store";
+import App from "./app";
+import messages_en from "./locales/en.json";
 
 const messages = {
-    'en': messages_en,
-    // other languages go here
+  en: messages_en,
+  // other languages go here
 };
 
 const language = navigator.language.split(/[-_]/)[0];
-const root = ReactDOM.createRoot(
-    document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-    <Provider store={store}>
-        <IntlProvider locale={language} messages={messages[language]}>
-            <App />
-        </IntlProvider>
-    </Provider>
+  <Provider store={store}>
+    <IntlProvider locale={language} messages={messages[language]}>
+      <App />
+    </IntlProvider>
+  </Provider>
 );
