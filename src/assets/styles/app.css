@@ -61,6 +61,12 @@ body {
     border-radius: 5px;
     color: var(--app-fg-color);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.app-dialog .footer .actions button i {
+    margin-inline-end: 5px;
+    font-size: 16px;
 }
 .app-dialog .footer .actions button:hover {
 

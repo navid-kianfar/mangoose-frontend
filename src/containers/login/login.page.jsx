@@ -19,7 +19,7 @@ class LoginPage extends React.Component {
       },
       params: {
         placeholder: "app.username.enter",
-        model: ''
+        model: "",
       },
       validation: {
         required: {
@@ -36,7 +36,7 @@ class LoginPage extends React.Component {
       params: {
         password: true,
         placeholder: "app.password.enter",
-        model: ''
+        model: "",
       },
       validation: {
         required: {
@@ -60,14 +60,20 @@ class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      password: '',
+      username: "",
+      password: "",
       remember: false,
+      waiting: false,
     };
   }
 
+  doLogin() {}
+
   updateModel(model) {
-    this.setState(model);
+    this.setState({
+      ...this.state,
+      ...model,
+    });
     console.log(model);
   }
 
@@ -90,7 +96,8 @@ class LoginPage extends React.Component {
           </div>
           <div className="footer">
             <div className="actions">
-              <button className="primary">
+              <button onClick={this.doLogin} className="primary">
+                {this.state.waiting && <i className="spinner ti ti-loader"></i>}
                 <FormattedMessage id="app.login" />
               </button>
               <button>

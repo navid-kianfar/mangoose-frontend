@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { IntlProvider } from "react-intl";
 import "normalize.css";
+import "./assets/fonts/tabler/tabler-icons.css";
 import "./assets/styles/index.css";
 import store from "./store";
 import App from "./app";
