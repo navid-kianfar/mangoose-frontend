@@ -3,6 +3,7 @@ import Wrapper from "./form.style";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useState } from "react";
 import ColorPickerComponent from "../color-picker/color-picker.component";
+import FilePickerComponent from "../file-picker/file-picker.component";
 
 const FormComponent = ({ form, disabled, waiting, onModelChange }) => {
   const [state, setState] = useState(form.model);
@@ -52,6 +53,21 @@ const FormComponent = ({ form, disabled, waiting, onModelChange }) => {
 
                 {e.element === "color-picker" && (
                   <ColorPickerComponent
+                    value={state[e.config.field]}
+                    onChange={(ev) =>
+                      updateField(e.config.field, ev.target.value)
+                    }
+                    disabled={disabled || waiting}
+                  />
+                )}
+
+                {e.element === "file" && (
+                  <FilePickerComponent
+                    placeholder={
+                      e.params.placeholder?.length > 0
+                        ? intl.formatMessage({ id: e.params.placeholder })
+                        : ""
+                    }
                     value={state[e.config.field]}
                     onChange={(ev) =>
                       updateField(e.config.field, ev.target.value)

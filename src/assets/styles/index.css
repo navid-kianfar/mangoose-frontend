@@ -33,6 +33,10 @@ body {
 .MuiInputBase-root.Mui-focused {
     border-color: var(--app-primary-color) !important;
 }
+.MuiPopover-paper {
+    background: var(--app-secondary-bg-color) !important;
+    color: var(--app-fg-color) !important;
+}
 .MuiInputBase-root fieldset{
     border-color: transparent !important;
 }

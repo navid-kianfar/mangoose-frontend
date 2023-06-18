@@ -18,7 +18,7 @@ const form = createFormElement([
     elements: [
       createColorPickerElement({
         config: {
-          field: "",
+          field: "color",
           label: "app.color",
         },
       }),
@@ -29,7 +29,7 @@ const form = createFormElement([
     elements: [
       createTextElement({
         config: {
-          field: "",
+          field: "name",
           label: "app.connection.name",
         },
         params: {
@@ -44,7 +44,7 @@ const form = createFormElement([
     elements: [
       createTextElement({
         config: {
-          field: "",
+          field: "favicon",
           label: "app.favicon",
         },
         params: {
@@ -72,7 +72,7 @@ const form = createFormElement([
     elements: [
       createTextElement({
         config: {
-          field: "",
+          field: "uri",
           label: "app.mongo.uri",
         },
         params: {
@@ -87,7 +87,7 @@ const form = createFormElement([
     elements: [
       createTextElement({
         config: {
-          field: "",
+          field: "ssh_host",
           label: "app.ssh.host",
         },
         params: {
@@ -102,7 +102,7 @@ const form = createFormElement([
     elements: [
       createTextElement({
         config: {
-          field: "",
+          field: "ssh_port",
           label: "app.ssh.port",
         },
         params: {
@@ -117,7 +117,7 @@ const form = createFormElement([
     elements: [
       createTextElement({
         config: {
-          field: "",
+          field: "ssh_username",
           label: "app.username",
         },
         params: {
@@ -132,7 +132,7 @@ const form = createFormElement([
     elements: [
       createDropdownElement({
         config: {
-          field: "",
+          field: "ssh_auth",
           label: "app.auth.type",
         },
         params: {
@@ -151,11 +151,12 @@ const form = createFormElement([
     elements: [
       createTextElement({
         config: {
-          field: "",
+          field: "ssh_password",
           label: "app.password",
         },
         params: {
           model: "",
+          password: true,
           placeholder: "app.password",
         },
       }),
@@ -166,7 +167,7 @@ const form = createFormElement([
     elements: [
       createFileElement({
         config: {
-          field: "",
+          field: "ssl_certificate",
           label: "app.tls.ssl.certificate",
         },
         params: {
@@ -181,11 +182,12 @@ const form = createFormElement([
     elements: [
       createTextElement({
         config: {
-          field: "",
+          field: "ssl_password",
           label: "app.certificate.password",
         },
         params: {
           model: "",
+          password: true,
           placeholder: "app.password",
         },
       }),
@@ -196,7 +198,7 @@ const form = createFormElement([
     elements: [
       createFileElement({
         config: {
-          field: "",
+          field: "ssl_authority_file",
           label: "app.certificate.authority.file",
         },
         params: {
@@ -211,7 +213,7 @@ const form = createFormElement([
     elements: [
       createCheckBoxElement({
         config: {
-          field: "",
+          field: "ssl_invalid_certificate",
           label: "",
         },
         params: {
@@ -226,7 +228,7 @@ const form = createFormElement([
     elements: [
       createCheckBoxElement({
         config: {
-          field: "",
+          field: "ssl_invalid_hostname",
           label: "",
         },
         params: {
