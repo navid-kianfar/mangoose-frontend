@@ -23,7 +23,101 @@ class HomePage extends React.Component {
               <div className="label">
                 <FormattedMessage id="app.databases" />
               </div>
-              <div className="inner"></div>
+              <div className="actions db-wrapper">
+                <button className="selected">
+                  <span>Database 1</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 2</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 3</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 2</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 3</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 2</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 3</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 2</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 3</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 2</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 3</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 2</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 3</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 2</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 3</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 2</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 3</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 2</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 3</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 2</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 3</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 2</span>
+                  <i className="ti ti-database"></i>
+                </button>
+                <button>
+                  <span>Database 3</span>
+                  <i className="ti ti-database"></i>
+                </button>
+              </div>
+              <div className="sep"></div>
               <div className="actions">
                 <button>
                   <span>
@@ -52,7 +146,7 @@ class HomePage extends React.Component {
                 <span>
                   <FormattedMessage id="app.compare.and.sync" />
                 </span>
-                <i className="ti ti-360"></i>
+                <i className="ti ti-git-compare"></i>
               </button>
               <button>
                 <span>
@@ -64,7 +158,7 @@ class HomePage extends React.Component {
                 <span>
                   <FormattedMessage id="app.data.relations" />
                 </span>
-                <i className="ti ti-terminal"></i>
+                <i className="ti ti-affiliate"></i>
               </button>
             </div>
           </div>

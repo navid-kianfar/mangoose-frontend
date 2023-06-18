@@ -65,6 +65,22 @@ body {
 .col-11 { flex: 0 0 91.66667%; max-width: 91.66667%; }
 .col-12 { flex: 0 0 100%; max-width: 100%; }
 
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--app-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: lightgray;
+    border-radius: 20px;
+    border: 3px solid var(--app-third-bg-color);
+}
+
+
 @-moz-keyframes spin {
     from { -moz-transform: rotate(0deg); }
     to { -moz-transform: rotate(360deg); }

@@ -15,6 +15,40 @@ const Wrapper = styled.div`
       display: flex;
       flex-direction: column;
       padding: 10px;
+      
+      .connections {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        button {
+          padding: 20px;
+          background: var(--app-third-bg-color);
+          border: none;
+          color: var(--app-fg-color);
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+        }
+      }
+      
+      .label {
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      
+      .db-wrapper {
+        max-height: calc(100vh - 400px);
+        overflow-y: auto;
+      }
+      
+      .sep {
+        height: 1px;
+        display: flex;
+        background: var(--app-border-color);
+        margin: 10px 0;
+      }
 
       .actions {
         display: flex;
@@ -24,12 +58,26 @@ const Wrapper = styled.div`
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 5px;
+          padding: 7px 10px;
           background: none;
           border: none;
           color: var(--app-fg-color);
           margin-bottom: 10px;
           cursor: pointer;
+          border-radius: 5px;
+          
+          i {
+            font-size: 17px;
+          }
+          span {
+            font-size: 12px;
+          }
+          
+          
+          &.selected,
+          &:hover {
+            background: var(--app-third-bg-color);
+          }
         }
       }
     }
