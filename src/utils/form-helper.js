@@ -43,6 +43,22 @@ const iconPreviewConfig = {
     model: "",
   },
 };
+const dropdownConfig = {
+  ...defaultConfig,
+  params: {
+    model: "",
+    items: [],
+    textField: "",
+    valueField: "",
+  },
+};
+const fileConfig = {
+  ...defaultConfig,
+  params: {
+    model: null,
+    placeholder: "",
+  },
+};
 
 const createTextElement = (config = textConfig) => {
   return {
@@ -72,6 +88,25 @@ const createIconPreviewElement = (config = iconPreviewConfig) => {
     element: "icon-preview",
   };
 };
+const createDropdownElement = (config = dropdownConfig) => {
+  const params = {
+    ...dropdownConfig,
+    ...config,
+    element: "dropdown",
+  };
+
+  params.params.textField = params.params.textField || "text";
+  params.params.valueField = params.params.valueField || "value";
+
+  return params;
+};
+const createFileElement = (config = fileConfig) => {
+  return {
+    ...fileConfig,
+    ...config,
+    element: "file",
+  };
+};
 const createFormElement = (formDef = []) => {
   const form = {
     id: Guid(),
@@ -96,4 +131,6 @@ export {
   createFormElement,
   createColorPickerElement,
   createIconPreviewElement,
+  createDropdownElement,
+  createFileElement,
 };

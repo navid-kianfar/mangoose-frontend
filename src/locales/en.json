@@ -23,5 +23,11 @@
   "app.ssh.port.number": "22",
   "app.ssh.host": "SSH host",
   "app.ssh.host.placeholder": "Host",
-  "app.auth.type": "Auth type"
+  "app.auth.type": "Auth type",
+  "app.select.file": "Select file",
+  "app.certificate.authority.file": "Certificate Authority File",
+  "app.certificate.password": "Certificate Password",
+  "app.tls.ssl.certificate": "TLS/SSL Certificate Key File",
+  "app.allow.invalid.certificate": "Allow invalid certificates --tlsAllowInvalidCertificates",
+  "app.allow.invalid.hostname": "Allow invalid hostnames --tlsAllowInvalidHostnames"
 }

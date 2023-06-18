@@ -2,9 +2,12 @@ import React from "react";
 import Wrapper from "./connection-setup.style";
 import { FormattedMessage } from "react-intl";
 import {
-  createColorPickerElement,
   createFormElement,
+  createCheckBoxElement,
+  createColorPickerElement,
   createIconPreviewElement,
+  createDropdownElement,
+  createFileElement,
   createTextElement,
 } from "../../../utils/form-helper";
 import FormComponent from "../../core/form/form.component";
@@ -127,13 +130,14 @@ const form = createFormElement([
   {
     size: 2,
     elements: [
-      createTextElement({
+      createDropdownElement({
         config: {
           field: "",
           label: "app.auth.type",
         },
         params: {
           model: "",
+          items: [],
         },
       }),
     ],
@@ -149,6 +153,81 @@ const form = createFormElement([
         params: {
           model: "",
           placeholder: "app.password",
+        },
+      }),
+    ],
+  },
+  {
+    size: 4,
+    elements: [
+      createFileElement({
+        config: {
+          field: "",
+          label: "app.tls.ssl.certificate",
+        },
+        params: {
+          model: "",
+          placeholder: "app.select.file",
+        },
+      }),
+    ],
+  },
+  {
+    size: 4,
+    elements: [
+      createTextElement({
+        config: {
+          field: "",
+          label: "app.certificate.password",
+        },
+        params: {
+          model: "",
+          placeholder: "app.password",
+        },
+      }),
+    ],
+  },
+  {
+    size: 4,
+    elements: [
+      createFileElement({
+        config: {
+          field: "",
+          label: "app.certificate.authority.file",
+        },
+        params: {
+          model: "",
+          placeholder: "app.select.file",
+        },
+      }),
+    ],
+  },
+  {
+    size: 6,
+    elements: [
+      createCheckBoxElement({
+        config: {
+          field: "",
+          label: "",
+        },
+        params: {
+          model: false,
+          label: "app.allow.invalid.certificate",
+        },
+      }),
+    ],
+  },
+  {
+    size: 6,
+    elements: [
+      createCheckBoxElement({
+        config: {
+          field: "",
+          label: "",
+        },
+        params: {
+          model: false,
+          label: "app.allow.invalid.hostname",
         },
       }),
     ],
