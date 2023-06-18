@@ -31,5 +31,12 @@
   "app.allow.invalid.certificate": "Allow invalid certificates --tlsAllowInvalidCertificates",
   "app.allow.invalid.hostname": "Allow invalid hostnames --tlsAllowInvalidHostnames",
   "app.private.key": "Private Key",
-  "app.ssh.agent": "SSH Agent"
+  "app.ssh.agent": "SSH Agent",
+  "app.data.relations": "Data Relations",
+  "app.node.shell": "Node.js Shell",
+  "app.compare.and.sync": "Compare & Sync",
+  "app.dump.and.restore": "Dump & Restore",
+  "app.create.database": "Create database",
+  "app.refresh.databases": "Refresh databases",
+  "app.databases": "Databases"
 }

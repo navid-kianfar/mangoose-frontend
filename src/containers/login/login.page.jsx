@@ -32,6 +32,8 @@ class LoginPage extends React.Component {
   render() {
     return (
       <Wrapper className="login-page-wrapper full-screen centered-box">
+        <h2 className="welcome">Welcome to Mangoose</h2>
+
         <LoginFormComponent
           onLogin={() => this.doLogin()}
           onModelChange={(model) => this.updateLoginModel(model)}

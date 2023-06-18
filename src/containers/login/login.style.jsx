@@ -1,6 +1,9 @@
 import styled from "styled-components";
 const Wrapper = styled.div`
-  .content {
+  .welcome {
+    color: var(--app-primary-color);
+    font-size: 33px;
+    margin-bottom: 40px;
   }
 `;
 
