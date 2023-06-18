@@ -83,7 +83,7 @@ const form = createFormElement([
     ],
   },
   {
-    size: 3,
+    size: 2,
     elements: [
       createTextElement({
         config: {
@@ -98,7 +98,7 @@ const form = createFormElement([
     ],
   },
   {
-    size: 2,
+    size: 1,
     elements: [
       createTextElement({
         config: {
@@ -113,7 +113,7 @@ const form = createFormElement([
     ],
   },
   {
-    size: 2,
+    size: 3,
     elements: [
       createTextElement({
         config: {
@@ -128,7 +128,7 @@ const form = createFormElement([
     ],
   },
   {
-    size: 2,
+    size: 3,
     elements: [
       createDropdownElement({
         config: {
@@ -136,8 +136,12 @@ const form = createFormElement([
           label: "app.auth.type",
         },
         params: {
-          model: "",
-          items: [],
+          model: 1,
+          items: [
+            { text: "app.password", value: 1 },
+            { text: "app.private.key", value: 2 },
+            { text: "app.ssh.agent", value: 3 },
+          ],
         },
       }),
     ],

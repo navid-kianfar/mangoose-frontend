@@ -29,5 +29,7 @@
   "app.certificate.password": "Certificate Password",
   "app.tls.ssl.certificate": "TLS/SSL Certificate Key File",
   "app.allow.invalid.certificate": "Allow invalid certificates --tlsAllowInvalidCertificates",
-  "app.allow.invalid.hostname": "Allow invalid hostnames --tlsAllowInvalidHostnames"
+  "app.allow.invalid.hostname": "Allow invalid hostnames --tlsAllowInvalidHostnames",
+  "app.private.key": "Private Key",
+  "app.ssh.agent": "SSH Agent"
 }

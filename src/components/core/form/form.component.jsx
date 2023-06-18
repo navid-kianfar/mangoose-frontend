@@ -1,4 +1,4 @@
-import { Checkbox, FormControlLabel } from "@mui/material";
+import { Checkbox, FormControlLabel, MenuItem, Select } from "@mui/material";
 import Wrapper from "./form.style";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useState } from "react";
@@ -58,6 +58,22 @@ const FormComponent = ({ form, disabled, waiting, onModelChange }) => {
                     }
                     disabled={disabled || waiting}
                   />
+                )}
+
+                {e.element === "dropdown" && (
+                  <Select
+                    value={state[e.config.field]}
+                    onChange={(ev) =>
+                      updateField(e.config.field, ev.target.value)
+                    }
+                    disabled={disabled || waiting}
+                  >
+                    {e.params.items.map((item, index) => (
+                      <MenuItem key={index} value={item[e.params.valueField]}>
+                        <FormattedMessage id={item[e.params.textField]} />
+                      </MenuItem>
+                    ))}
+                  </Select>
                 )}
 
                 {e.element === "icon-preview" && (

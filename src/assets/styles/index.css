@@ -20,6 +20,22 @@ body {
 .MuiCheckbox-colorPrimary {
     color: unset !important;
 }
+.MuiInputBase-root {
+    border: 1px solid var(--app-border-color) !important;
+}
+.MuiInputBase-root [role="button"] {
+    color: var(--app-fg-color);
+    padding: 13px 14px;
+}
+.MuiInputBase-root svg{
+    color: var(--app-fg-color);
+}
+.MuiInputBase-root.Mui-focused {
+    border-color: var(--app-primary-color) !important;
+}
+.MuiInputBase-root fieldset{
+    border-color: transparent !important;
+}
 
 .container {
     display: flex;

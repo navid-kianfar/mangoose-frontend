@@ -16,11 +16,15 @@ const Wrapper = styled.div`
 
     input {
       background: var(--app-secondary-bg-color);
-      border: 1px solid var(--app-primary-color);
+      border: 1px solid var(--app-border-color);
       outline: none;
       border-radius: 5px;
       padding: 16px;
       color: var(--app-fg-color);
+
+      &:focus {
+        border-color: var(--app-primary-color);
+      }
     }
 
     .icon-preview {
