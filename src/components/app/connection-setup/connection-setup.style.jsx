@@ -6,6 +6,9 @@ const Wrapper = styled.div`
 
     .form-element-wrapper {
       padding: 20px;
+      .form-element {
+        margin-bottom: 0;
+      }
     }
     .footer {
       //justify-content: space-between;

@@ -64,6 +64,95 @@ const form = createFormElement([
       }),
     ],
   },
+  {
+    size: 12,
+    elements: [
+      createTextElement({
+        config: {
+          field: "",
+          label: "app.mongo.uri",
+        },
+        params: {
+          model: "",
+          placeholder: "app.mongo.uri.placeholder",
+        },
+      }),
+    ],
+  },
+  {
+    size: 3,
+    elements: [
+      createTextElement({
+        config: {
+          field: "",
+          label: "app.ssh.host",
+        },
+        params: {
+          model: "",
+          placeholder: "app.ssh.host.placeholder",
+        },
+      }),
+    ],
+  },
+  {
+    size: 2,
+    elements: [
+      createTextElement({
+        config: {
+          field: "",
+          label: "app.ssh.port",
+        },
+        params: {
+          model: "",
+          placeholder: "app.ssh.port.number",
+        },
+      }),
+    ],
+  },
+  {
+    size: 2,
+    elements: [
+      createTextElement({
+        config: {
+          field: "",
+          label: "app.username",
+        },
+        params: {
+          model: "",
+          placeholder: "app.username",
+        },
+      }),
+    ],
+  },
+  {
+    size: 2,
+    elements: [
+      createTextElement({
+        config: {
+          field: "",
+          label: "app.auth.type",
+        },
+        params: {
+          model: "",
+        },
+      }),
+    ],
+  },
+  {
+    size: 3,
+    elements: [
+      createTextElement({
+        config: {
+          field: "",
+          label: "app.password",
+        },
+        params: {
+          model: "",
+          placeholder: "app.password",
+        },
+      }),
+    ],
+  },
 ]);
 
 class ConnectionSetupComponent extends React.Component {

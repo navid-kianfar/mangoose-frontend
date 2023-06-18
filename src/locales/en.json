@@ -16,5 +16,12 @@
   "app.favicon": "Favicon",
   "app.favicon.placeholder": "URL of Tabler icon (e.g: 'ti ti-settings')",
   "app.color": "Color",
-  "app.preview": "Preview"
+  "app.preview": "Preview",
+  "app.mongo.uri": "Mongo URI",
+  "app.mongo.uri.placeholder": "mongodb://admin@PASSWORDPLACEHOLDER@localhost:27017/",
+  "app.ssh.port": "Port",
+  "app.ssh.port.number": "22",
+  "app.ssh.host": "SSH host",
+  "app.ssh.host.placeholder": "Host",
+  "app.auth.type": "Auth type"
 }
