@@ -35,8 +35,17 @@ body {
     border-color: var(--app-primary-color) !important;
 }
 .MuiPopover-paper {
+    border: 1px solid var(--app-border-color);
     background: var(--app-secondary-bg-color) !important;
     color: var(--app-fg-color) !important;
+}
+
+.MuiPopover-paper i {
+    font-size: 20px;
+    color: var(--app-fg-color);
+}
+.MuiPopover-paper hr {
+    border-color: var(--app-third-bg-color);
 }
 .MuiInputBase-root fieldset{
     border-color: transparent !important;

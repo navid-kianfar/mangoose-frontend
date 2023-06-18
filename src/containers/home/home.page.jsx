@@ -1,11 +1,32 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
 import Wrapper from "./home.style";
+import {
+  Divider,
+  ListItemIcon,
+  ListItemText,
+  Menu,
+  MenuItem,
+  MenuList,
+  Paper,
+} from "@mui/material";
 
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      achoreEl: null,
+      connectionsPlate: false,
+    };
+  }
+
+  toggleConnectionPlate(state, e) {
+    const patch = { ...this.state };
+    if (e && !patch.achoreEl) {
+      patch.achoreEl = e.target;
+    }
+    patch.connectionsPlate = state;
+    this.setState(patch);
   }
 
   render() {
@@ -14,10 +35,51 @@ class HomePage extends React.Component {
         <div className="sidebar">
           <div className="box">
             <div className="connections">
-              <button>
+              <button onClick={(e) => this.toggleConnectionPlate(true, e)}>
                 <span>New Connection</span>
                 <i className="ti ti-caret-down"></i>
               </button>
+
+              <Menu
+                anchorEl={this.state.achoreEl}
+                open={this.state.connectionsPlate}
+                onClose={() => this.toggleConnectionPlate(false)}
+              >
+                <MenuList>
+                  <MenuItem>
+                    <ListItemIcon>
+                      <i className="ti ti-affiliate"></i>
+                    </ListItemIcon>
+                    <ListItemText>
+                      <FormattedMessage id="app.new.project" />
+                    </ListItemText>
+                  </MenuItem>
+                  <Divider />
+                  <MenuItem>
+                    <ListItemIcon>
+                      <i className="ti ti-plug-connected"></i>
+                    </ListItemIcon>
+                    <ListItemText>localhost</ListItemText>
+                  </MenuItem>
+                  <MenuItem>
+                    <ListItemIcon>
+                      <i className="ti ti-check"></i>
+                    </ListItemIcon>
+                    <ListItemText>
+                      <FormattedMessage id="app.new.connection" />
+                    </ListItemText>
+                  </MenuItem>
+                  <Divider />
+                  <MenuItem>
+                    <ListItemIcon>
+                      <i className="ti ti-settings"></i>
+                    </ListItemIcon>
+                    <ListItemText>
+                      <FormattedMessage id="app.manage.connections" />
+                    </ListItemText>
+                  </MenuItem>
+                </MenuList>
+              </Menu>
             </div>
             <div className="databases">
               <div className="label">
@@ -26,86 +88,6 @@ class HomePage extends React.Component {
               <div className="actions db-wrapper">
                 <button className="selected">
                   <span>Database 1</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 2</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 3</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 2</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 3</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 2</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 3</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 2</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 3</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 2</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 3</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 2</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 3</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 2</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 3</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 2</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 3</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 2</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 3</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 2</span>
-                  <i className="ti ti-database"></i>
-                </button>
-                <button>
-                  <span>Database 3</span>
                   <i className="ti ti-database"></i>
                 </button>
                 <button>

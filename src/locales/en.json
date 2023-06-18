@@ -38,5 +38,7 @@
   "app.dump.and.restore": "Dump & Restore",
   "app.create.database": "Create database",
   "app.refresh.databases": "Refresh databases",
-  "app.databases": "Databases"
+  "app.databases": "Databases",
+  "app.new.project": "New Project",
+  "app.manage.connections": "Manage connections"
 }
