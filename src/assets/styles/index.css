@@ -24,8 +24,9 @@ body {
     border: 1px solid var(--app-border-color) !important;
 }
 .MuiInputBase-root [role="button"] {
-    color: var(--app-fg-color);
     padding: 13px 14px;
+    color: var(--app-fg-color);
+    background: var(--app-secondary-bg-color);
 }
 .MuiInputBase-root svg{
     color: var(--app-fg-color);

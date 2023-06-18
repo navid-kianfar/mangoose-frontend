@@ -58,13 +58,7 @@ const form = createFormElement([
   },
 ]);
 
-const LoginFormComponent = ({
-  disabled,
-  waiting,
-  onModelChange,
-  onLogin,
-  onAdvancedConnection,
-}) => {
+const LoginFormComponent = ({ disabled, waiting, onModelChange, onLogin }) => {
   return (
     <div className="app-dialog">
       <div className="header">
@@ -85,9 +79,6 @@ const LoginFormComponent = ({
           <button onClick={onLogin} className="primary">
             {waiting && <i className="spinner ti ti-loader"></i>}
             <FormattedMessage id="app.login" />
-          </button>
-          <button onClick={onAdvancedConnection}>
-            <FormattedMessage id="app.advanced.connection.setup" />
           </button>
         </div>
       </div>

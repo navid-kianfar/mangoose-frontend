@@ -6,9 +6,8 @@ import ColorPickerComponent from "../color-picker/color-picker.component";
 import FilePickerComponent from "../file-picker/file-picker.component";
 
 const FormComponent = ({ form, disabled, waiting, onModelChange }) => {
-  const [state, setState] = useState(form.model);
   const intl = useIntl();
-
+  const [state, setState] = useState(form.model);
   const updateField = (field, value) => {
     const patch = {
       ...state,

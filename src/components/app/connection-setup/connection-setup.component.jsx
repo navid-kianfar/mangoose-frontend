@@ -246,27 +246,35 @@ class ConnectionSetupComponent extends React.Component {
     this.state = {
       saving: false,
       connecting: false,
-      name: "",
-      icon: "",
-      color: "",
-      uri: "",
-      ssh: {
-        host: "",
-        port: 22,
-        username: "",
-        password: "",
-        authType: "password",
-      },
-      tls: {
-        keyFile: "",
-        password: "",
-        authorityFile: "",
-        allowInvalidCertificate: false,
-        allowInvalidHostName: false,
+      model: {
+        color: "",
+        favicon: "",
+        name: "",
+        uri: "",
+        ssh_auth: 1,
+        ssh_host: "",
+        ssh_password: "",
+        ssh_port: "",
+        ssh_username: "",
+        ssl_authority_file: "",
+        ssl_certificate: "",
+        ssl_invalid_certificate: false,
+        ssl_invalid_hostname: false,
+        ssl_password: "",
       },
     };
   }
 
+  onModelChange(model) {
+    this.setState({
+      ...this.state,
+      model,
+    });
+
+    console.log(model);
+  }
+
+  doConnect() {}
   render() {
     return (
       <Wrapper className="connection-setup-wrapper">
@@ -288,7 +296,7 @@ class ConnectionSetupComponent extends React.Component {
               form={form}
               disabled={false}
               waiting={false}
-              onModelChange={() => {}}
+              onModelChange={(e) => this.onModelChange(e)}
             />
           </div>
           <div className="footer">
